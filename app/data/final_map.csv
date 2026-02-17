@@ -1,0 +1,279 @@
+Division,Zone_Name,Lat_Rule,Long_Rule,Season,Crop,Variety
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Kharif,Paddy,MO-4 (Bhadra)
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Kharif,Paddy,Mahaveer
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Kharif,Paddy,Matta
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Black gram,LBG-17
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Cowpea,GP-1
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Green gram,Pusa Vishal
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Groundnut,TMV-2
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Groundnut,DH 3-30
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Groundnut,DH-40
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Paddy,
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Paddy,Jyoti
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Rabi,Sesame,DS-1
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Groundnut,TMV-2
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Groundnut,DH 3-30
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Paddy,
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Paddy,Shakti
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Paddy,CTH-1 (Mukti)
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Paddy,Sahyadri Brahma
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Vegetables,Brinjal (G-4)
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Vegetables,Chilli (Poosa Jwala)
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Vegetables,Cucumber
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Vegetables,Radish
+Brahmavara,Zone A: River Basin,13.40-13.45,74.70-74.75,Summer,Vegetables,Lady's Finger
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Kharif,Paddy,MO-4 (Bhadra)
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Kharif,Paddy,Mahaveer
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Black gram,LBG-17
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Cowpea,GP-1
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Green gram,Pusa Vishal
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Groundnut,TMV-2
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Groundnut,DH 3-30
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Groundnut,DH-40
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Rabi,Sesame,DS-1
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Groundnut,TMV-2
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Groundnut,DH 3-30
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Vegetables,Brinjal (G-4)
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Vegetables,Chilli (Poosa Jwala)
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Vegetables,Cucumber
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Vegetables,Radish
+Brahmavara,Zone B: General Plains,13.35-13.50,74.75-74.85,Summer,Vegetables,Lady's Finger
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Kharif,Paddy,MO-4 (Bhadra)
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Kharif,Paddy,Mahaveer
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Black gram,LBG-17
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Cowpea,GP-1
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Green gram,Pusa Vishal
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Groundnut,TMV-2
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Groundnut,DH 3-30
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Groundnut,DH-40
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Paddy,
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Paddy,MO-4
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Rabi,Sesame,DS-1
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Groundnut,TMV-2
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Groundnut,DH 3-30
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Paddy,
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Paddy,Shakti
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Paddy,CTH-1 (Mukti)
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Vegetables,Brinjal
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Vegetables,Chilli
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Vegetables,Watermelon
+Byndoor,Zone A: Coastal Belt,13.80-13.95,74.60-74.65,Summer,Vegetables,Cucumber
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Kharif,Paddy,MO-4 (Bhadra)
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Kharif,Paddy,Mahaveer
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Black gram,LBG-17
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Cowpea,GP-1
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Green gram,Pusa Vishal
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Groundnut,TMV-2
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Groundnut,DH 3-30
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Groundnut,DH-40
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Paddy,
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Paddy,MO-4
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Rabi,Sesame,DS-1
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Groundnut,TMV-2
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Groundnut,DH 3-30
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Paddy,
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Paddy,Shakti
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Paddy,CTH-1 (Mukti)
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Vegetables,Brinjal
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Vegetables,Chilli
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Vegetables,Watermelon
+Byndoor,Zone B: Interior,13.80-13.95,74.65-74.80,Summer,Vegetables,Cucumber
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Kharif,Paddy,MO-4 (Bhadra)
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Kharif,Paddy,Mahaveer
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Kharif,Paddy,Sahyadri Brahma
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Black gram,LBG-17
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Cowpea,GP-1
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Green gram,Pusa Vishal
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Groundnut,TMV-2
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Groundnut,DH 3-30
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Groundnut,DH-40
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Paddy,
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Paddy,MO-4
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Rabi,Sesame,DS-1
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Groundnut,TMV-2
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Groundnut,DH 3-30
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Paddy,
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Paddy,Shakti
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Paddy,CTH-1 (Mukti)
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Vegetables,Brinjal
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Vegetables,Chilli
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Vegetables,Cucumber
+Hebri,Zone A: Forest Fringe,13.45-13.55,74.90-75.05,Summer,Vegetables,Radish
+Kapu,Special Zone: Shankarpura (GI),13.20-13.30,74.75-74.80,Year-round,Jasmine,Shankarpura Mallige (GI)
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Kharif,Paddy,MO-4 (Bhadra)
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Kharif,Paddy,Mahaveer
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Kharif,Paddy,Matta
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Black gram,LBG-17
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Cowpea,GP-1
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Green gram,Pusa Vishal
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Groundnut,TMV-2
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Groundnut,DH 3-30
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Groundnut,DH-40
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Paddy,
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Paddy,Jyoti
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Rabi,Sesame,DS-1
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Groundnut,TMV-2
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Groundnut,DH 3-30
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Paddy,
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Paddy,Shakti
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Paddy,CTH-1 (Mukti)
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Paddy,Sahyadri Brahma
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Vegetables,Brinjal (G-4)
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Vegetables,Chilli (Poosa Jwala)
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Vegetables,Cucumber
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Vegetables,Radish
+Kapu,Zone A: Coastal,13.20-13.30,74.70-74.72,Summer,Vegetables,Lady's Finger
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Kharif,Paddy,MO-4 (Bhadra)
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Kharif,Paddy,Mahaveer
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Kharif,Paddy,Matta
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Black gram,LBG-17
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Cowpea,GP-1
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Green gram,Pusa Vishal
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Groundnut,TMV-2
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Groundnut,DH 3-30
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Groundnut,DH-40
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Paddy,
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Paddy,Jyoti
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Rabi,Sesame,DS-1
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Groundnut,TMV-2
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Groundnut,DH 3-30
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Paddy,
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Paddy,Shakti
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Paddy,CTH-1 (Mukti)
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Paddy,Sahyadri Brahma
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Vegetables,Brinjal (G-4)
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Vegetables,Chilli (Poosa Jwala)
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Vegetables,Cucumber
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Vegetables,Radish
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Summer,Vegetables,Lady's Finger
+Kapu,Zone B: Inland,13.20-13.30,74.72-74.85,Year-round,Jasmine,Shankarpura Mallige (GI)
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Kharif,Paddy,MO-4 (Bhadra)
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Black gram,LBG-17
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Cowpea,GP-1
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Cowpea,TVX-940-02
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Green gram,Pusa Vishal
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Green gram,Poosa-103
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Groundnut,TMV-2
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Groundnut,DH 3-30
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Groundnut,DH-40
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Sesame,DS-1
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Rabi,Sesame,KBSH-78 hybrid
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Summer,Groundnut,TMV-2
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Summer,Groundnut,DH 3-30
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Summer,Vegetables,Brinjal
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Summer,Vegetables,Chilli
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Summer,Vegetables,Cucumber
+Karkala,Zone A: Rocky Plateau,13.10-13.25,74.85-75.10,Summer,Vegetables,Radish
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Kharif,Paddy,MO-4 (Bhadra)
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Kharif,Paddy,Mahaveer
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Black gram,LBG-17
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Cowpea,GP-1
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Green gram,Pusa Vishal
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Groundnut,TMV-2
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Groundnut,DH 3-30
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Groundnut,DH-40
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Paddy,
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Paddy,MO-4
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Rabi,Sesame,DS-1
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Groundnut,TMV-2
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Groundnut,DH 3-30
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Paddy,
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Paddy,Shakti
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Paddy,CTH-1 (Mukti)
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Vegetables,Brinjal
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Vegetables,Chilli
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Vegetables,Watermelon
+Kundapura,Zone A: Estuarine Delta,13.55-13.65,74.65-74.68,Summer,Vegetables,Cucumber
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Kharif,Paddy,MO-4 (Bhadra)
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Black gram,LBG-17
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Cowpea,GP-1
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Green gram,Pusa Vishal
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Groundnut,TMV-2
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Groundnut,DH 3-30
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Groundnut,DH-40
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Rabi,Sesame,DS-1
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Summer,Groundnut,TMV-2
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Summer,Groundnut,DH 3-30
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Summer,Vegetables,Brinjal
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Summer,Vegetables,Chilli
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Summer,Vegetables,Watermelon
+Kundapura,Zone B: Uplands,13.55-13.70,74.68-74.90,Summer,Vegetables,Cucumber
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Kharif,Paddy,MO-4 (Bhadra)
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Kharif,Paddy,Mahaveer
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Black gram,LBG-17
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Cowpea,GP-1
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Green gram,Pusa Vishal
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Groundnut,TMV-2
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Groundnut,DH 3-30
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Groundnut,DH-40
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Paddy,
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Paddy,MO-4
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Rabi,Sesame,DS-1
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Groundnut,TMV-2
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Groundnut,DH 3-30
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Paddy,
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Paddy,Shakti
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Paddy,CTH-1 (Mukti)
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Vegetables,Brinjal
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Vegetables,Chilli
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Vegetables,Watermelon
+Kundapura,Zone C: Transitional Plains,13.60-13.70,74.65-74.75,Summer,Vegetables,Cucumber
+Udupi,Special Zone: Mattu Village (GI),13.25-13.28,74.73-74.75,Kharif,Paddy,MO-4 (Bhadra)
+Udupi,Special Zone: Mattu Village (GI),13.25-13.28,74.73-74.75,Rabi,Brinjal,Mattu Gulla (GI)
+Udupi,Special Zone: Mattu Village (GI),13.25-13.28,74.73-74.75,Summer,Cowpea,GP-1
+Udupi,Special Zone: Shankarpura (GI),13.20-13.30,74.75-74.80,Year-round,Jasmine,Shankarpura Mallige (GI)
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Kharif,Paddy,MO-4 (Bhadra)
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Kharif,Paddy,Mahaveer
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Black gram,LBG-17
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Cowpea,GP-1
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Cowpea,TVX-940-02
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Green gram,Pusa Vishal
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Green gram,Poosa-103
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Groundnut,TMV-2
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Groundnut,DH 3-30
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Groundnut,DH-40
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Sesame,DS-1
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Rabi,Sesame,KBSH-78 hybrid
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Groundnut,TMV-2
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Groundnut,DH 3-30
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Vegetables,Brinjal (G-4)
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Vegetables,Chilli (Poosa Jwala)
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Vegetables,Cucumber
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Vegetables,Radish
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Vegetables,Lady's Finger
+Udupi,Zone A: Coastal Strip,13.30-13.40,74.65-74.72,Summer,Vegetables,Lady’s Finger
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Kharif,Paddy,MO-4 (Bhadra)
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Kharif,Paddy,Mahaveer
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Kharif,Paddy,Matta
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Kharif,Paddy,Betta-Makki
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Kharif,Paddy,Majalu
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Kharif,Paddy,Jaya
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Black gram,LBG-17
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Cowpea,GP-1
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Cowpea,TVX-940-02
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Green gram,Pusa Vishal
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Green gram,Poosa-103
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Groundnut,TMV-2
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Groundnut,DH 3-30
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Groundnut,DH-40
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Paddy,
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Paddy,Jyoti
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Paddy,Edasuggi
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Paddy,Suggi
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Sesame,DS-1
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Rabi,Sesame,KBSH-78 hybrid
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Groundnut,TMV-2
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Groundnut,DH 3-30
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,Shakti
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,CTH-1 (Mukti)
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,Sahyadri Brahma
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,Early-summer
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,Late-summer
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Paddy,Lata
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Vegetables,Brinjal (G-4)
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Vegetables,Chilli (Poosa Jwala)
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Vegetables,Cucumber
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Vegetables,Radish
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Vegetables,Lady's Finger
+Udupi,Zone B: Hinterland,13.30-13.40,74.72-74.85,Summer,Vegetables,Lady’s Finger

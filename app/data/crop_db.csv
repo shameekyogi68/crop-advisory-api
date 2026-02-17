@@ -1,0 +1,39 @@
+crop_id,crop_name,crop_category,season,crop_duration_days,harvest_type,water_requirement,growth_type,root_depth,plant_type,spacing_row_cm,spacing_plant_cm,suitable_for_intercrop,management_difficulty,input_requirement,average_yield_per_acre,yield_unit
+G001,Paddy (Betta-Makki),Cereal,Kharif,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+G001,Paddy (CTH-1 (Mukti)),Cereal,Summer,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+G001,Paddy (Generic),Cereal,Summer,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+G001,Paddy (Generic),Cereal,Rabi,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+G001,Paddy (Jaya),Cereal,Kharif,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+C003,Paddy (Jyoti),Cereal,Rabi,115,Single,High,Annual,Shallow,Erect,20,15,No,Medium,High,25.0,quintal
+C005,Paddy (Lata),Cereal,Summer,115,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+C001,Paddy (MO-4 (Bhadra)),Cereal,Kharif,125,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+G001,Paddy (MO-4),Cereal,Rabi,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+C002,Paddy (Mahaveer),Cereal,Kharif,135,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,22.0,quintal
+G001,Paddy (Majalu),Cereal,Kharif,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+G001,Paddy (Matta),Cereal,Kharif,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+C004,Paddy (Sahyadri Brahma),Cereal,Summer,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,24.0,quintal
+C004,Paddy (Sahyadri Brahma),Cereal,Kharif,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,24.0,quintal
+G001,Paddy (Shakti),Cereal,Summer,120,Single,High,Annual,Shallow,Erect,20,10,No,Medium,Medium,20.0,quintal
+F001,Jasmine (Shankarpura Mallige (GI)),Flower,Year-round,365,Continuous,High,Perennial,Medium,Shrub,200,200,No,High,High,2500.0,kg
+G001,Vegetables (Watermelon),Fruit,Summer,90,Multiple,Medium,Annual,Medium,Erect,45,30,Yes,Medium,Medium,8.0,tonne
+O003,Groundnut (DH 3-30),Oilseed,Rabi,105,Single,Medium,Annual,Medium,Spreading,30,10,No,Medium,Medium,10.0,quintal
+O003,Groundnut (DH 3-30),Oilseed,Summer,105,Single,Medium,Annual,Medium,Spreading,30,10,No,Medium,Medium,10.0,quintal
+O004,Groundnut (DH-40),Oilseed,Rabi,100,Single,Medium,Annual,Medium,Spreading,30,10,No,Medium,Medium,10.0,quintal
+O001,Groundnut (TMV-2),Oilseed,Rabi,105,Single,Medium,Annual,Medium,Spreading,30,10,No,Medium,Medium,9.0,quintal
+O001,Groundnut (TMV-2),Oilseed,Summer,105,Single,Medium,Annual,Medium,Spreading,30,10,No,Medium,Medium,9.0,quintal
+O002,Sesame (DS-1),Oilseed,Rabi,95,Single,Low,Annual,Medium,Erect,30,15,Yes,Low,Low,3.5,quintal
+O005,Sesame (KBSH-78 hybrid),Oilseed,Rabi,90,Single,Low,Annual,Medium,Erect,30,15,Yes,Low,Low,4.5,quintal
+P002,Black gram (LBG-17),Pulse,Rabi,85,Single,Low,Annual,Medium,Erect,30,10,Yes,Low,Low,5.0,quintal
+P001,Cowpea (GP-1),Pulse,Rabi,80,Multiple,Low,Annual,Deep,Spreading,45,15,Yes,Low,Low,6.0,quintal
+P001,Cowpea (GP-1),Pulse,Summer,80,Multiple,Low,Annual,Deep,Spreading,45,15,Yes,Low,Low,6.0,quintal
+G001,Cowpea (TVX-940-02),Pulse,Rabi,80,Multiple,Low,Annual,Deep,Spreading,45,15,Yes,Low,Low,6.0,quintal
+G001,Green gram (Poosa-103),Pulse,Rabi,70,Single,Low,Annual,Medium,Erect,30,10,Yes,Low,Low,5.5,quintal
+P003,Green gram (Pusa Vishal),Pulse,Rabi,70,Single,Low,Annual,Medium,Erect,30,10,Yes,Low,Low,5.5,quintal
+V002,Vegetables (Chilli (Poosa Jwala)),Spice,Summer,75,Multiple,Medium,Annual,Medium,Erect,60,45,Yes,Medium,Medium,8.0,tonne
+V001,Brinjal (Mattu Gulla (GI)),Vegetable,Rabi,90,Multiple,High,Annual,Medium,Erect,75,60,No,High,High,12.0,tonne
+V006,Vegetables (Brinjal (G-4)),Vegetable,Summer,100,Multiple,High,Annual,Medium,Erect,75,60,No,Medium,High,10.0,tonne
+G001,Vegetables (Brinjal),Vegetable,Summer,90,Multiple,Medium,Annual,Medium,Erect,45,30,Yes,Medium,Medium,8.0,tonne
+G001,Vegetables (Chilli),Vegetable,Summer,90,Multiple,Medium,Annual,Medium,Erect,45,30,Yes,Medium,Medium,8.0,tonne
+V005,Vegetables (Cucumber),Vegetable,Summer,70,Multiple,High,Annual,Medium,Climber,150,60,No,Medium,Medium,8.0,tonne
+V003,Vegetables (Lady's Finger),Vegetable,Summer,95,Multiple,Medium,Annual,Medium,Erect,60,30,Yes,Low,Medium,4.0,tonne
+V004,Vegetables (Radish),Vegetable,Summer,45,Single,Medium,Annual,Shallow,Erect,30,10,Yes,Low,Low,6.0,tonne
