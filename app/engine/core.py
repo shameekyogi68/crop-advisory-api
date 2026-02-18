@@ -12,25 +12,36 @@ DATA_DIR = BASE_DIR / 'data'
 # Allow module to load data once
 _df_map = None
 _df_db = None
+_taluk_data = None
 
-def load_data(map_path=None, db_path=None):
+def load_data(map_path=None, db_path=None, json_path=None):
     """
     Loads data into global variables. 
     Designed to be called on API Startup.
     """
-    global _df_map, _df_db
+    global _df_map, _df_db, _taluk_data
     
     if map_path is None:
         map_path = DATA_DIR / 'final_map.csv'
     if db_path is None:
         db_path = DATA_DIR / 'crop_db.csv'
+    if json_path is None:
+        json_path = DATA_DIR / 'taluk_profiles/taluk_profiles.json'
         
     try:
         _df_map = pd.read_csv(map_path)
         _df_db = pd.read_csv(db_path)
         # Ensure IDs are strings
         _df_db['crop_id'] = _df_db['crop_id'].astype(str)
-        print(f"Data Loaded Successfully. Map: {len(_df_map)} rows, DB: {len(_df_db)} rows.")
+        
+        if os.path.exists(json_path):
+             with open(json_path, 'r') as f:
+                 _taluk_data = json.load(f)
+        else:
+            print(f"Warning: Taluk Profiles not found at {json_path}")
+            _taluk_data = {}
+
+        print(f"Data Loaded Successfully. Map: {len(_df_map)} rows, DB: {len(_df_db)} rows, Profiles: {len(_taluk_data)} taluks.")
     except Exception as e:
         print(f"Critical Error loading data: {e}")
         raise e
@@ -307,12 +318,12 @@ def recommend_crops(lat, long, date_str):
     zone_name = zone_info['Zone_Name']
     zone_type = "coastal" if "Coastal" in zone_name else "hinterland"
     
-    taluk_profiles_path = DATA_DIR / "taluk_profiles/taluk_profiles.json"
-    taluk_data = {}
-    if taluk_profiles_path.exists():
-        with open(taluk_profiles_path, 'r') as f:
-            profiles = json.load(f)
-            taluk_data = profiles.get(taluk, {})
+    taluk = zone_info['Division']
+    zone_name = zone_info['Zone_Name']
+    zone_type = "coastal" if "Coastal" in zone_name else "hinterland"
+    
+    # Use cached data
+    taluk_data = _taluk_data.get(taluk, {}) if _taluk_data else {}
     
     all_recs = []
     

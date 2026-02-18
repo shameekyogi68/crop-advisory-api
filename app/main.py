@@ -24,6 +24,10 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# Enable GZip Compression for performance
+from fastapi.middleware.gzip import GZipMiddleware
+app.add_middleware(GZipMiddleware, minimum_size=1000)
+
 @app.get("/health")
 def health_check():
     return {"status": "active", "version": "1.0.0"}
