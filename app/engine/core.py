@@ -352,52 +352,56 @@ def recommend_crops(lat, long, date_str):
         
         # Generator Calls
         farming_guide_obj = generate_farming_guide(db_row)
-        soil_profile_obj = get_soil_profile(taluk_data, soil_type_input)
-        alerts, tips, checklist = generate_advisory_content(crop_display_name, soil_type_input)
-        shop_list = generate_shopping_list(crop_display_name)
         
-        meta_obj = {
-            "crop": crop_display_name,
-            "mode": "GPS Zone",
-            "region": taluk,
-            "zone": zone_type,
-            "topography": "Upland",
-            "soil_profile": soil_profile_obj
-        }
-        
+        # Advisory Text (Simple Bilingual)
         advisory_obj = {
-            "alerts": alerts,
-            "management_tips": tips,
-            "schedule": [],
-            "shopping_list": shop_list,
-            "soil_health_checklist": checklist,
-            "substitutes": [],
-            "summary_card": [
-                {
-                    "label": get_bilingual("soil_health"), 
-                    "value": {"en": "✅ Soil Health: Good", "kn": "✅ ಮಣ್ಣಿನ ಆರೋಗ್ಯ: ಉತ್ತಮವಾಗಿದೆ"}
-                },
-                {
-                    "label": get_bilingual("sowing_date"),
-                    "value": {"en": f"📅 Sowing Date: {date_str}", "kn": f"📅 ಬಿತ್ತನೆ ದಿನಾಂಕ: {date_str}"}
-                }
-            ],
-            "voice_script": ""
+            "en": "Optimal.",
+            "kn": "ಪರಿಪೂರ್ಣ."
         }
         
+        # Water Requirement (Bilingual)
+        w_req_val = db_row.get('water_requirement', 'Medium')
+        w_req_obj = {
+            "en": w_req_val,
+            "kn": get_text(w_req_val, "kn") if get_text(w_req_val, "kn") != w_req_val else w_req_val # Fallback logic or map explicitly
+        }
+        # explicit map for High/Medium/Low if not in dict
+        if w_req_val == 'High': w_req_obj['kn'] = "ಹೆಚ್ಚು"
+        elif w_req_val == 'Medium': w_req_obj['kn'] = "ಮಧ್ಯಮ"
+        elif w_req_val == 'Low': w_req_obj['kn'] = "ಕಡಿಮೆ"
+
         rec_data = {
+            "crop_name": crop_display_name,
+            "season": row['Season'],
             "advisory": advisory_obj,
-            "farming_guide": farming_guide_obj, # NEW
-            "meta": meta_obj,
-            "status": "success"
+            "farming_guide": farming_guide_obj,
+            "water_requirement": w_req_obj,
+            
+            # Technical Fields
+            "crop_id": db_row.get('crop_id', 'Unknown'),
+            "crop_category": db_row.get('crop_category', 'Unknown'),
+            "crop_duration_days": int(db_row.get('crop_duration_days', 0)),
+            "harvest_type": db_row.get('harvest_type', 'Single'),
+            "growth_type": db_row.get('growth_type', 'Annual'),
+            "root_depth": db_row.get('root_depth', 'Shallow'),
+            "plant_type": db_row.get('plant_type', 'Erect'),
+            "spacing_row_cm": float(db_row.get('spacing_row_cm', 0)),
+            "spacing_plant_cm": float(db_row.get('spacing_plant_cm', 0)),
+            "suitable_for_intercrop": db_row.get('suitable_for_intercrop', 'No'),
+            "management_difficulty": db_row.get('management_difficulty', 'Medium'),
+            "input_requirement": db_row.get('input_requirement', 'Medium'),
+            "average_yield_per_acre": float(db_row.get('average_yield_per_acre', 0)),
+            "yield_unit": db_row.get('yield_unit', 'quintal'),
+            "zone_source": "Agronomic Map"
         }
         
         all_recs.append(rec_data)
 
+    # Dedupe by crop name
     unique_recs = []
     seen_crops = set()
     for r in all_recs:
-        cname = r['meta']['crop']
+        cname = r['crop_name']
         if cname not in seen_crops:
              unique_recs.append(r)
              seen_crops.add(cname)

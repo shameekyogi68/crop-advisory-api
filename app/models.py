@@ -76,10 +76,27 @@ class FarmingGuide(BaseModel):
     maintenance: BilingualText
 
 class CropRecommendation(BaseModel):
-    advisory: Advisory
-    farming_guide: FarmingGuide # Restored
-    meta: Meta
-    status: str = "success"
+    crop_name: str
+    season: str
+    advisory: BilingualText
+    farming_guide: FarmingGuide
+    water_requirement: BilingualText
+    # Technical Fields (Flat)
+    crop_id: str
+    crop_category: str
+    crop_duration_days: int
+    harvest_type: Optional[str] = None
+    growth_type: Optional[str] = None
+    root_depth: Optional[str] = None
+    plant_type: Optional[str] = None
+    spacing_row_cm: float
+    spacing_plant_cm: float
+    suitable_for_intercrop: str
+    management_difficulty: str
+    input_requirement: str
+    average_yield_per_acre: float
+    yield_unit: str
+    zone_source: str = "Agronomic Map"
 
     class Config:
         extra = "allow" 

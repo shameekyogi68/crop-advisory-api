@@ -29,32 +29,21 @@ result = recommend_crops(
 print("\n--- 📤 OUTPUT (JSON Response) ---")
 print(json.dumps(result, indent=2, ensure_ascii=False))
 
-print("\n--- 🌾 FARMER ADVISORY (Bilingual View) ---")
+print("\n--- 🌾 FARMER ADVISORY (Flat Bilingual View) ---\n")
 if 'recommendations' in result and result['recommendations']:
     for r in result['recommendations']:
-        meta = r.get('meta', {})
-        advisory = r.get('advisory', {})
-        guide = r.get('farming_guide', {}) # NEW
+        cname = r.get('crop_name')
+        season = r.get('season')
+        guide = r.get('farming_guide', {})
+        advisory = r.get('advisory', {}).get('en') # Simple string
         
-        print(f"\nCrop: {meta.get('crop')} ({meta.get('region')})")
-        
-        # Farming Guide
+        print(f"Crop: {cname} ({season})")
+        print(f"   Advisory: {advisory}")
         print("   📖 Guide:")
         print(f"      - Duration: {guide.get('duration', {}).get('en')} / {guide.get('duration', {}).get('kn')}")
         print(f"      - Yield: {guide.get('yield_est', {}).get('en')} / {guide.get('yield_est', {}).get('kn')}")
+        print(f"      - Water: {r.get('water_requirement', {}).get('en')} / {r.get('water_requirement', {}).get('kn')}")
         print(f"      - Spacing: {guide.get('spacing', {}).get('en')} / {guide.get('spacing', {}).get('kn')}")
-        
-        # Shopping List
-        print("   🛒 Shopping List:")
-        for item in advisory.get('shopping_list', []):
-            name = item['name']['en']
-            qty = item['qty_display']['en']
-            print(f"      - {name}: {qty}")
-            
-        # Alerts
-        print("   ⚠️ Alerts:")
-        for alert in advisory.get('alerts', []):
-            print(f"      - {alert['en']}")
-            print(f"        ({alert['kn']})")
+        print("-" * 40)
 else:
     print("No recommendations found.")

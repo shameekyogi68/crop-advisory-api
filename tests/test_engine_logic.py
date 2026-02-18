@@ -52,12 +52,10 @@ for sc in scenarios:
             # Print top crops to verify filtering
             for r in recs:
                 # Highlight if it's an advisory result
-                meta = r.get('meta', {})
-                crop_name = meta.get('crop', 'Unknown')
-                alerts = r.get('advisory', {}).get('alerts', [])
-                alert_text = alerts[0].get('en') if alerts else "No Alerts"
+                crop_name = r.get('crop_name', 'Unknown')
+                adv_text = r.get('advisory', {}).get('en', 'No Advisory')
                 
-                print(f"   - {crop_name} | {alert_text}")
+                print(f"   - {crop_name} | Advisory: {adv_text}")
         else:
             print("⚠️ No crops found!")
             
