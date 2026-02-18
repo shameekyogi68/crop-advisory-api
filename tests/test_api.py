@@ -38,7 +38,8 @@ try:
     # Check if we got results
     if res['context']['seasons_detected'] == ['Kharif'] and len(res['recommendations']) > 0:
         print("✅ Recommendation Logic Successful")
-        print(f"Sample: {res['recommendations'][0]['crop_name']}")
+        # Access via new Meta object
+        print(f"Sample: {res['recommendations'][0]['meta']['crop']}")
     else:
         print("❌ Unexpected Result Logic")
         print(res)

@@ -52,8 +52,12 @@ for sc in scenarios:
             # Print top crops to verify filtering
             for r in recs:
                 # Highlight if it's an advisory result
-                adv = f"[{r.get('advisory', 'Current')}]"
-                print(f"   - {adv} {r['crop_name']} ({r.get('water_requirement', 'N/A')} Water)")
+                meta = r.get('meta', {})
+                crop_name = meta.get('crop', 'Unknown')
+                alerts = r.get('advisory', {}).get('alerts', [])
+                alert_text = alerts[0].get('en') if alerts else "No Alerts"
+                
+                print(f"   - {crop_name} | {alert_text}")
         else:
             print("⚠️ No crops found!")
             
