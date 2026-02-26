@@ -1,11 +1,12 @@
 from pydantic import BaseModel, Field, field_validator
-from typing import List, Optional, Any, Dict
+from typing import List, Optional, Any, Dict, Union
 from datetime import datetime
 
 class CropRecommendationRequest(BaseModel):
     latitude: float = Field(..., ge=8.0, le=37.0, description="Latitude of the farm location")
     longitude: float = Field(..., ge=68.0, le=97.0, description="Longitude of the farm location")
     date: str = Field(..., description="Date of recommendation in YYYY-MM-DD format", pattern=r"^\d{4}-\d{2}-\d{2}$")
+    language: Optional[str] = Field(None, pattern="^(en|kn)$", description="Preferred language for output (en/kn)")
 
     @field_validator('date')
     def validate_date(cls, v):
@@ -15,42 +16,52 @@ class CropRecommendationRequest(BaseModel):
             raise ValueError("Incorrect date format, should be YYYY-MM-DD")
         return v
 
+
 class BilingualText(BaseModel):
     en: str
     kn: str
 
+# Helper type for either bilingual dict or flat string
+LocalizedText = Union[BilingualText, str]
+
+
 class SoilProfile(BaseModel):
-    nitrogen: BilingualText
-    phosphorus: BilingualText
-    potassium: BilingualText
-    ph_status: BilingualText
+    nitrogen: LocalizedText
+    phosphorus: LocalizedText
+    potassium: LocalizedText
+    ph_status: LocalizedText
     ph_value: float
-    organic_carbon: Optional[BilingualText] = None
-    type: BilingualText
-    zinc: Optional[BilingualText] = None
-    boron: Optional[BilingualText] = None
-    iron: Optional[BilingualText] = None
-    sulphur: Optional[BilingualText] = None
+    organic_carbon: Optional[LocalizedText] = None
+    type: LocalizedText
+    zinc: Optional[LocalizedText] = None
+    boron: Optional[LocalizedText] = None
+    iron: Optional[LocalizedText] = None
+    sulphur: Optional[LocalizedText] = None
+
 
 class ShoppingItem(BaseModel):
     bags: int
     loose_kg: float
-    name: BilingualText
-    qty_display: BilingualText
+    name: LocalizedText
+    qty_display: LocalizedText
+
 
 class SummaryItem(BaseModel):
-    label: BilingualText
-    value: BilingualText
+    label: LocalizedText
+    value: LocalizedText
+
 
 class SoilHealthChecklist(BaseModel):
-    crop_suitability: Dict[str, Any] # score: Bilingual, warnings: List[Bilingual] 
-    drainage: BilingualText
-    erosion: BilingualText
-    moisture: BilingualText
+    crop_suitability: Dict[str, Any] # score: Localized, warnings: List[Localized] 
+    drainage: LocalizedText
+    erosion: LocalizedText
+    moisture: LocalizedText
+
 
 class Advisory(BaseModel):
-    alerts: List[BilingualText]
-    management_tips: List[BilingualText]
+    alerts: List[LocalizedText]
+    management_tips: List[LocalizedText]
+
     savings_msg: Dict = {}
     schedule: List = [] 
     shopping_list: List[ShoppingItem]
@@ -68,19 +79,21 @@ class Meta(BaseModel):
     soil_profile: SoilProfile
 
 class FarmingGuide(BaseModel):
-    duration: BilingualText
-    water: BilingualText
-    yield_est: BilingualText
-    suitability: BilingualText
-    spacing: BilingualText
-    maintenance: BilingualText
+    duration: LocalizedText
+    water: LocalizedText
+    yield_est: LocalizedText
+    suitability: LocalizedText
+    spacing: LocalizedText
+    maintenance: LocalizedText
+
 
 class CropRecommendation(BaseModel):
     crop_name: str
     season: str
-    advisory: BilingualText
+    advisory: LocalizedText
     farming_guide: FarmingGuide
-    water_requirement: BilingualText
+    water_requirement: LocalizedText
+
     # Technical Fields (Flat)
     crop_id: str
     crop_category: str

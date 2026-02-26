@@ -149,6 +149,23 @@ def check_sowing_window(season, date_obj):
 
 from .localization import get_bilingual, get_text
 
+def localize(data, lang=None):
+    """
+    Helper to transform bilingual dict to flat string if lang is provided.
+    Works on strings, lists, and dicts recursively.
+    """
+    if lang is None:
+        return data
+        
+    if isinstance(data, dict):
+        if lang in data and len(data) <= 3: # Likely a bilingual dict {"en":..., "kn":...}
+            return data[lang]
+        return {k: localize(v, lang) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [localize(item, lang) for item in data]
+    return data
+
+
 def get_soil_profile(taluk_data, soil_type):
     """Generates the bilingual Soil Profile object."""
     sp = {}
@@ -290,10 +307,11 @@ def generate_farming_guide(crop_data):
         "maintenance": {"en": maint_en, "kn": maint_kn}
     }
 
-def recommend_crops(lat, long, date_str):
+def recommend_crops(lat, long, date_str, language=None):
     """
     Main Engine Function (Bilingual Advisory Version).
     """
+
     # ... (Keep existing setup) ...
     # [Pre-amble same as before]
 
@@ -417,7 +435,8 @@ def recommend_crops(lat, long, date_str):
              unique_recs.append(r)
              seen_crops.add(cname)
 
-    return {
+    # Apply final localization if language selected
+    return localize({
         "context": {
             "location": f"{taluk} - {zone_name}",
             "coordinates": {"lat": lat, "long": long},
@@ -425,4 +444,5 @@ def recommend_crops(lat, long, date_str):
             "date": date_str
         },
         "recommendations": unique_recs
-    }
+    }, language)
+

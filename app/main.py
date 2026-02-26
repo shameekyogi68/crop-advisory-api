@@ -45,8 +45,10 @@ def get_recommendation(request: CropRecommendationRequest):
     result = recommend_crops(
         lat=request.latitude,
         long=request.longitude,
-        date_str=request.date
+        date_str=request.date,
+        language=request.language
     )
+
     
     if "error" in result:
         raise HTTPException(status_code=400, detail=result['error'])
