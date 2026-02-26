@@ -119,6 +119,8 @@ class Context(BaseModel):
     coordinates: dict
     seasons_detected: List[str]
     date: str
+    language: Optional[str] = None
+
 
 class RecommendationResponse(BaseModel):
     context: Context

@@ -20,7 +20,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Agronomic Crop Recommendation API",
     description="Backend engine for precise, zone-specific crop advice.",
-    version="1.0.0",
+    version="1.2.0",
+
     lifespan=lifespan
 )
 
@@ -30,7 +31,8 @@ app.add_middleware(GZipMiddleware, minimum_size=1000)
 
 @app.get("/health")
 def health_check():
-    return {"status": "active", "version": "1.0.0"}
+    return {"status": "active", "version": "1.2.0"}
+
 
 @app.post("/recommend", response_model=RecommendationResponse)
 def get_recommendation(request: CropRecommendationRequest):

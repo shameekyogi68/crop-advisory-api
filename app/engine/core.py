@@ -441,8 +441,10 @@ def recommend_crops(lat, long, date_str, language=None):
             "location": f"{taluk} - {zone_name}",
             "coordinates": {"lat": lat, "long": long},
             "seasons_detected": target_seasons,
-            "date": date_str
+            "date": date_str,
+            "language": language
         },
+
         "recommendations": unique_recs
     }, language)
 
