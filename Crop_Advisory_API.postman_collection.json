@@ -2,7 +2,7 @@
     "info": {
         "_postman_id": "crop-advisory-api",
         "name": "Crop Advisory API",
-        "description": "Requests for testing the hosted Crop Advisory API",
+        "description": "Requests for testing the hosted Crop Advisory API with language support",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
@@ -12,19 +12,19 @@
                 "method": "GET",
                 "header": [],
                 "url": {
-                    "raw": "{{base_url}}/",
+                    "raw": "{{base_url}}/health",
                     "host": [
                         "{{base_url}}"
                     ],
                     "path": [
-                        ""
+                        "health"
                     ]
                 }
             },
             "response": []
         },
         {
-            "name": "Get Recommendation (Udupi June/Kharif)",
+            "name": "Get Recommendation (Bilingual - Default)",
             "request": {
                 "method": "POST",
                 "header": [
@@ -47,7 +47,63 @@
                         "recommend"
                     ]
                 },
-                "description": "Gets crop recommendations for Udupi (Coastal Zone) in June (Kharif Season)."
+                "description": "Gets crop recommendations in the default bilingual (en/kn) format."
+            },
+            "response": []
+        },
+        {
+            "name": "Get Recommendation (Kannada)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"latitude\": 13.34,\n  \"longitude\": 74.74,\n  \"date\": \"2026-06-15\",\n  \"language\": \"kn\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/recommend",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "recommend"
+                    ]
+                },
+                "description": "Gets crop recommendations localized perfectly in Kannada."
+            },
+            "response": []
+        },
+        {
+            "name": "Get Recommendation (English)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"latitude\": 13.34,\n  \"longitude\": 74.74,\n  \"date\": \"2026-06-15\",\n  \"language\": \"en\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/recommend",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "recommend"
+                    ]
+                },
+                "description": "Gets crop recommendations localized perfectly in English."
             },
             "response": []
         }
@@ -55,9 +111,9 @@
     "variable": [
         {
             "key": "base_url",
-            "value": "YOUR_RENDER_URL_HERE",
+            "value": "https://crop-advisory-api.onrender.com",
             "type": "string",
-            "description": "Replace with your actual Render URL (e.g. https://crop-advisory-api.onrender.com)"
+            "description": "The hosted Render URL"
         }
     ]
 }
