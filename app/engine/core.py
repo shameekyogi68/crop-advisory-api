@@ -307,16 +307,21 @@ def recommend_crops(lat, long, date_str, language=None):
     status, message = check_sowing_window(primary_season, current_date_obj)
     
     target_seasons = []
-    season_status = ""
+    
+    # Get localized season names for messages
+    p_season_txt = get_text(primary_season, language or 'en')
+    n_season_txt = get_text(next_season, language or 'en')
     
     if status == 'Optimal' or status == 'Early':
         # Window is open or early, show Primary + Next
         target_seasons = [primary_season, next_season]
-        season_status = f"{primary_season} Sowing Active. Also showing upcoming {next_season} crops."
+        template = get_text("sowing_active_template", language or 'en')
+        season_status = template.format(season=p_season_txt, next_season=n_season_txt)
     else:
         # status == 'Closed' -> Season Lost
         target_seasons = [next_season]
-        season_status = f"{primary_season} Sowing Window is Closed (Season Lost). Showing {next_season} crops."
+        template = get_text("season_lost_template", language or 'en')
+        season_status = template.format(season=p_season_txt, next_season=n_season_txt)
 
     zone_info = get_zone(lat, long)
     
@@ -382,7 +387,7 @@ def recommend_crops(lat, long, date_str, language=None):
 
     return {
         "context": {
-            "location": f"{taluk} - {zone_name}",
+            "location": f"{get_text(taluk, language)} - {get_text(zone_name, language)}",
             "coordinates": {"lat": lat, "long": long},
             "seasons_detected": target_seasons,
             "season_status": season_status,

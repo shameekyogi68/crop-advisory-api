@@ -55,9 +55,19 @@ TRANSLATIONS = {
     "food grain": {"en": "Food Grain", "kn": "ಆಹಾರ ಧಾನ್ಯ"},
     "commercial": {"en": "Commercial", "kn": "ವಾಣಿಜ್ಯ"},
     "erect": {"en": "Erect", "kn": "ನೆಟ್ಟಗೆ ಬೆಳೆಯುವ"},
+    "spreading": {"en": "Spreading", "kn": "ಹರಡಿ ಬೆಳೆಯುವ"},
+    "climber": {"en": "Climber", "kn": "ಬಳ್ಳಿ"},
+    "annual": {"en": "Annual", "kn": "ವಾರ್ಷಿಕ"},
+    "perennial": {"en": "Perennial", "kn": "ಬಹುವಾರ್ಷಿಕ"},
+    "shrub": {"en": "Shrub", "kn": "ಪೊದೆಸಸ್ಯ"},
     "shallow": {"en": "Shallow", "kn": "ಮೇಲ್ಪದರದ ಬೇರು"},
     "cereal": {"en": "Cereal", "kn": "ಧಾನ್ಯ"},
     "vegetables": {"en": "Vegetables", "kn": "ತರಕಾರಿಗಳು"},
+    "oilseed": {"en": "Oilseed", "kn": "ಎಣ್ಣೆಕಾಳು"},
+    "pulse": {"en": "Pulse", "kn": "ದ್ವಿದಳ ಧಾನ್ಯ"},
+    "fruit": {"en": "Fruit", "kn": "ಹಣ್ಣು"},
+    "flower": {"en": "Flower", "kn": "ಹೂವು"},
+    "spice": {"en": "Spice", "kn": "ಸಾಂಬಾರ ಪದಾರ್ಥ"},
     "paddy": {"en": "Paddy", "kn": "ಭತ್ತ"},
     "groundnut": {"en": "Groundnut", "kn": "ನೆಲಗಡಲೆ"},
     "maize": {"en": "Maize", "kn": "ಮೆಕ್ಕೆಜೋಳ"},
@@ -80,6 +90,46 @@ TRANSLATIONS = {
     "low": {"en": "Low", "kn": "ಕಡಿಮೆ"},
     "medium": {"en": "Medium", "kn": "ಮಧ್ಯಮ"},
     "high": {"en": "High", "kn": "ಹೆಚ್ಚು"},
+    "tonne": {"en": "tonne", "kn": "ಟನ್"},
+    "kg": {"en": "kg", "kn": "ಕೆ.ಜಿ"},
+    "year-round": {"en": "Year-round", "kn": "ವರ್ಷವಿಡೀ"},
+    "summer": {"en": "Summer", "kn": "ಬೇಸಿಗೆ"},
+    "kharif": {"en": "Kharif", "kn": "ಮುಂಗಾರು"},
+    "rabi": {"en": "Rabi", "kn": "ಹಿಂಗಾರು"},
+    "sowing_active_template": {
+        "en": "{season} Sowing Active. Also showing upcoming {next_season} crops.",
+        "kn": "{season} ಬಿತ್ತನೆ ಸಕ್ರಿಯವಾಗಿದೆ. ಮುಂಬರುವ {next_season} ಬೆಳೆಗಳನ್ನೂ ತೋರಿಸಲಾಗುತ್ತಿದೆ."
+    },
+    "season_lost_template": {
+        "en": "{season} Sowing Window is Closed (Season Lost). Showing {next_season} crops.",
+        "kn": "{season} ಬಿತ್ತನೆ ಅವಧಿ ಮುಗಿದಿದೆ (ಹಂಗಾಮು ಕಳೆದುಹೋಗಿದೆ). {next_season} ಬೆಳೆಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ."
+    },
+    
+    # Divisions
+    "brahmavara": {"en": "Brahmavara", "kn": "ಬ್ರಹ್ಮಾವರ"},
+    "byndoor": {"en": "Byndoor", "kn": "ಬೈಂದೂರು"},
+    "hebri": {"en": "Hebri", "kn": "ಹೆಬ್ರಿ"},
+    "kapu": {"en": "Kapu", "kn": "ಕಾಪು"},
+    "karkala": {"en": "Karkala", "kn": "ಕಾರ್ಕಳ"},
+    "kundapura": {"en": "Kundapura", "kn": "ಕುಂದಾಪುರ"},
+    "udupi": {"en": "Udupi", "kn": "ಉಡುಪಿ"},
+
+    # Zones
+    "zone a: river basin": {"en": "Zone A: River Basin", "kn": "ವಲಯ ಎ: ನದಿ ಪಾತ್ರ"},
+    "zone b: general plains": {"en": "Zone B: General Plains", "kn": "ವಲಯ ಬಿ: ಸಾಮಾನ್ಯ ಬಯಲು ಪ್ರದೇಶ"},
+    "zone a: coastal belt": {"en": "Zone A: Coastal Belt", "kn": "ವಲಯ ಎ: ಕರಾವಳಿ ಪ್ರದೇಶ"},
+    "zone b: interior": {"en": "Zone B: Interior", "kn": "ವಲಯ ಬಿ: ಒಳನಾಡು"},
+    "zone a: forest fringe": {"en": "Zone A: Forest Fringe", "kn": "ವಲಯ ಎ: ಅರಣ್ಯ ಅಂಚು"},
+    "special zone: shankarpura (gi)": {"en": "Special Zone: Shankarpura (GI)", "kn": "ವಿಶೇಷ ವಲಯ: ಶಂಕರಪುರ (ಜಿ.ಐ)"},
+    "zone a: coastal": {"en": "Zone A: Coastal", "kn": "ವಲಯ ಎ: ಕರಾವಳಿ"},
+    "zone b: inland": {"en": "Zone B: Inland", "kn": "ವಲಯ ಬಿ: ಒಳನಾಡು"},
+    "zone a: rocky plateau": {"en": "Zone A: Rocky Plateau", "kn": "ವಲಯ ಎ: ಕಲ್ಲಿನ ಪ್ರಸ್ಥಭೂಮಿ"},
+    "zone a: estuarine delta": {"en": "Zone A: Estuarine Delta", "kn": "ವಲಯ ಎ: ನದಿಮುಖಜ ಭೂಮಿ"},
+    "zone b: uplands": {"en": "Zone B: Uplands", "kn": "ವಲಯ ಬಿ: ಎತ್ತರದ ಪ್ರದೇಶಗಳು"},
+    "zone c: transitional plains": {"en": "Zone C: Transitional Plains", "kn": "ವಲಯ ಸಿ: ಬದಲಾಗುವ ಬಯಲು ಪ್ರದೇಶ"},
+    "special zone: mattu village (gi)": {"en": "Special Zone: Mattu Village (GI)", "kn": "ವಿಶೇಷ ವಲಯ: ಮಟ್ಟು ಗ್ರಾಮ (ಜಿ.ಐ)"},
+    "zone a: coastal strip": {"en": "Zone A: Coastal Strip", "kn": "ವಲಯ ಎ: ಕರಾವಳಿ ತೀರ"},
+    "zone b: hinterland": {"en": "Zone B: Hinterland", "kn": "ವಲಯ ಬಿ: ಹಿನ್ನಾಡು"},
 }
 
 def get_bilingual(key):
