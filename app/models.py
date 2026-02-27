@@ -79,4 +79,4 @@ class Context(BaseModel):
 
 class RecommendationResponse(BaseModel):
     context: Context
-    recommendations: List[CropKnowledge]
+    recommendations: Dict[str, List[CropKnowledge]]

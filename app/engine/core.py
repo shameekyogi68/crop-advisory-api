@@ -130,6 +130,12 @@ SOWING_WINDOWS = {
     'Summer': {'start': (1, 15), 'end': (2, 28)}
 }
 
+NEXT_SEASON = {
+    'Summer': 'Kharif',
+    'Kharif': 'Rabi',
+    'Rabi': 'Summer'
+}
+
 def check_sowing_window(season, date_obj):
     if season not in SOWING_WINDOWS:
         return 'Optimal', '' 
@@ -293,7 +299,25 @@ def recommend_crops(lat, long, date_str, language=None):
     except ValueError:
         return {"error": "Invalid date format. Use YYYY-MM-DD."}
         
-    target_seasons = get_season(date_obj)
+    current_date_obj = date_obj
+    primary_season = get_season(current_date_obj)[0]
+    next_season = NEXT_SEASON.get(primary_season)
+    
+    # Check window for primary season
+    status, message = check_sowing_window(primary_season, current_date_obj)
+    
+    target_seasons = []
+    season_status = ""
+    
+    if status == 'Optimal' or status == 'Early':
+        # Window is open or early, show Primary + Next
+        target_seasons = [primary_season, next_season]
+        season_status = f"{primary_season} Sowing Active. Also showing upcoming {next_season} crops."
+    else:
+        # status == 'Closed' -> Season Lost
+        target_seasons = [next_season]
+        season_status = f"{primary_season} Sowing Window is Closed (Season Lost). Showing {next_season} crops."
+
     zone_info = get_zone(lat, long)
     
     if zone_info is None or zone_info.empty:
@@ -305,8 +329,11 @@ def recommend_crops(lat, long, date_str, language=None):
     taluk = zone_info['Division']
     zone_name = zone_info['Zone_Name']
     
-    all_recs = []
+    # Use a dictionary to group by season
+    grouped_recs = {s: [] for s in target_seasons}
+    seen_crops = set() # To dedupe within/across seasons if needed
     
+    # Search for crops in target seasons
     relevant_crops = _df_map[
         (_df_map['Division'] == taluk) &
         (_df_map['Zone_Name'] == zone_name) &
@@ -316,8 +343,18 @@ def recommend_crops(lat, long, date_str, language=None):
     for _, row in relevant_crops.iterrows():
         crop_name = row['Crop']
         variety = row['Variety']
+        season_name = row['Season']
+        
+        # Handle Year-round/Perennial by adding to primary season if possible
+        target_season_key = season_name if season_name in target_seasons else primary_season
+        
         full_name = f"{crop_name} ({variety})" if pd.notna(variety) and variety else crop_name
         
+        # Dedupe key: (CropName, Variety, Season)
+        dedupe_key = (crop_name, variety, season_name)
+        if dedupe_key in seen_crops:
+            continue
+            
         db_row = {}
         matched_db = _df_db[_df_db['crop_name'] == full_name]
         if matched_db.empty:
@@ -336,27 +373,22 @@ def recommend_crops(lat, long, date_str, language=None):
             }
         
         static_intel = get_static_knowledge(db_row, language)
-        all_recs.append(static_intel)
-
-    # Dedupe by crop id / name
-    unique_recs = []
-    seen_crops = set()
-    for r in all_recs:
-        cname = r['identity']['crop_name']
-        vname = r['identity']['variety_name']
-        key = f"{cname}_{vname}"
-        if key not in seen_crops:
-             unique_recs.append(r)
-             seen_crops.add(key)
+        
+        if target_season_key not in grouped_recs:
+            grouped_recs[target_season_key] = []
+            
+        grouped_recs[target_season_key].append(static_intel)
+        seen_crops.add(dedupe_key)
 
     return {
         "context": {
             "location": f"{taluk} - {zone_name}",
             "coordinates": {"lat": lat, "long": long},
             "seasons_detected": target_seasons,
+            "season_status": season_status,
             "date": date_str,
             "language": language
         },
-        "recommendations": unique_recs
+        "recommendations": grouped_recs
     }
 
