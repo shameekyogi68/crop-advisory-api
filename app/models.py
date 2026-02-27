@@ -25,94 +25,50 @@ class BilingualText(BaseModel):
 LocalizedText = Union[BilingualText, str]
 
 
-class SoilProfile(BaseModel):
-    nitrogen: LocalizedText
-    phosphorus: LocalizedText
-    potassium: LocalizedText
-    ph_status: LocalizedText
-    ph_value: float
-    organic_carbon: Optional[LocalizedText] = None
-    type: LocalizedText
-    zinc: Optional[LocalizedText] = None
-    boron: Optional[LocalizedText] = None
-    iron: Optional[LocalizedText] = None
-    sulphur: Optional[LocalizedText] = None
+class CropIdentity(BaseModel):
+    crop_name: LocalizedText
+    variety_name: LocalizedText
+    crop_category: LocalizedText
 
+class AgroClimaticSuitability(BaseModel):
+    suitable_temperature_range: LocalizedText
+    suitable_rainfall_range: LocalizedText
+    suitable_soil_types: LocalizedText
+    suitable_soil_ph_range: LocalizedText
 
-class ShoppingItem(BaseModel):
-    bags: int
-    loose_kg: float
-    name: LocalizedText
-    qty_display: LocalizedText
+class MorphologicalCharacteristics(BaseModel):
+    plant_height_range: LocalizedText
+    growth_habit: LocalizedText
+    root_system_type: LocalizedText
+    maturity_duration_range: LocalizedText
 
+class SeedSpecifications(BaseModel):
+    seed_rate_per_acre: LocalizedText
+    germination_period: LocalizedText
+    seed_viability_period: LocalizedText
 
-class SummaryItem(BaseModel):
-    label: LocalizedText
-    value: LocalizedText
+class YieldPotential(BaseModel):
+    average_yield_per_acre: LocalizedText
+    yield_range_under_normal_conditions: LocalizedText
 
+class SensitivityProfile(BaseModel):
+    drought_sensitivity_level: LocalizedText
+    waterlogging_sensitivity_level: LocalizedText
+    heat_tolerance_level: LocalizedText
 
-class SoilHealthChecklist(BaseModel):
-    crop_suitability: Dict[str, Any] # score: Localized, warnings: List[Localized] 
-    drainage: LocalizedText
-    erosion: LocalizedText
-    moisture: LocalizedText
+class EndUseInformation(BaseModel):
+    main_use_type: LocalizedText
+    market_category: LocalizedText
 
-
-class Advisory(BaseModel):
-    alerts: List[LocalizedText]
-    management_tips: List[LocalizedText]
-
-    savings_msg: Dict = {}
-    schedule: List = [] 
-    shopping_list: List[ShoppingItem]
-    soil_health_checklist: SoilHealthChecklist
-    substitutes: List = []
-    summary_card: List[SummaryItem]
-    voice_script: str = ""
-
-class Meta(BaseModel):
-    crop: str
-    mode: str = "GPS Zone"
-    region: str
-    zone: str
-    topography: str = "Upland" # Default or mapped
-    soil_profile: SoilProfile
-
-class FarmingGuide(BaseModel):
-    duration: LocalizedText
-    water: LocalizedText
-    yield_est: LocalizedText
-    suitability: LocalizedText
-    spacing: LocalizedText
-    maintenance: LocalizedText
-
-
-class CropRecommendation(BaseModel):
-    crop_name: str
-    season: str
-    advisory: LocalizedText
-    farming_guide: FarmingGuide
-    water_requirement: LocalizedText
-
-    # Technical Fields (Flat)
+class CropKnowledge(BaseModel):
     crop_id: str
-    crop_category: str
-    crop_duration_days: int
-    harvest_type: Optional[str] = None
-    growth_type: Optional[str] = None
-    root_depth: Optional[str] = None
-    plant_type: Optional[str] = None
-    spacing_row_cm: float
-    spacing_plant_cm: float
-    suitable_for_intercrop: str
-    management_difficulty: str
-    input_requirement: str
-    average_yield_per_acre: float
-    yield_unit: str
-    zone_source: str = "Agronomic Map"
-
-    class Config:
-        extra = "allow" 
+    identity: CropIdentity
+    agro_climatic_suitability: AgroClimaticSuitability
+    morphological_characteristics: MorphologicalCharacteristics
+    seed_specifications: SeedSpecifications
+    yield_potential: YieldPotential
+    sensitivity_profile: SensitivityProfile
+    end_use_information: EndUseInformation
 
 class Context(BaseModel):
     location: str
@@ -121,7 +77,6 @@ class Context(BaseModel):
     date: str
     language: Optional[str] = None
 
-
 class RecommendationResponse(BaseModel):
     context: Context
-    recommendations: List[CropRecommendation]
+    recommendations: List[CropKnowledge]

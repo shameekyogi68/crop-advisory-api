@@ -166,154 +166,124 @@ def localize(data, lang=None):
     return data
 
 
-def get_soil_profile(taluk_data, soil_type):
-    """Generates the bilingual Soil Profile object."""
-    sp = {}
-    # Nutrients from Taluk Profile
-    for nutrient in ['nitrogen', 'phosphorus', 'potassium', 'zinc', 'boron', 'iron', 'sulphur']:
-        status_key = f"{nutrient}_class"
-        status_val = taluk_data.get(status_key, 'medium')
-        sp[nutrient] = get_bilingual(status_val)
-    
-    # pH
-    ph_class = taluk_data.get('ph_class', 'neutral')
-    sp['ph_status'] = get_bilingual(ph_class)
-    sp['ph_value'] = 6.5 # Default or derived average
-    
-    # Type
-    sp['type'] = get_bilingual(soil_type)
-    
-    return sp
+def get_static_knowledge(crop_data, language=None):
+    """
+    Constructs the static knowledge structure from crop database row.
+    """
+    crop_name = crop_data.get('crop_name', 'Unknown')
+    # Variety is usually in parentheses in crop_name: "Paddy (MO-4)"
+    variety = "Generic"
+    base_name = crop_name
+    if '(' in crop_name and ')' in crop_name:
+        parts = crop_name.split('(')
+        base_name = parts[0].strip()
+        variety = parts[1].replace(')', '').strip()
 
-def generate_advisory_content(crop_name, soil_type):
-    """Generates dynamic advisory content (Alerts, Tips, Checklist)."""
-    # Alerts
-    alerts = [
-        get_bilingual("weather_good"),
-        get_bilingual("gps_mode")
-    ]
-    if "Zinc" in get_text("zinc", "en"): # Dummy check logic
-        alerts.append(get_bilingual("zinc_warning"))
-        
-    # Management Tips
-    tips = [
-        get_bilingual("plough_deep"),
-        get_bilingual("green_manure"),
-        get_bilingual("stubble")
-    ]
+    # Derived fields based on agronomic standards for the region (Udupi/Zone 10)
+    # This logic maps available CSV fields to the new structured response
     
-    # Soil Health Checklist
-    checklist = {
-        "crop_suitability": {
-            "score": get_bilingual("medium"),
-            "warnings": [get_bilingual("sandy_loss")] if 'sandy' in soil_type.lower() else []
-        },
-        "drainage": get_bilingual("drainage_excess") if 'sandy' in soil_type.lower() else get_bilingual("normal"),
-        "erosion": get_bilingual("erosion_risk"),
-        "moisture": get_bilingual("low_moisture") if 'sandy' in soil_type.lower() else get_bilingual("medium")
+    # 1. Identity
+    identity = {
+        "crop_name": get_bilingual(base_name),
+        "variety_name": get_bilingual(variety),
+        "crop_category": get_bilingual(crop_data.get('crop_category', 'Cereal'))
     }
-    
-    return alerts, tips, checklist
 
-def generate_shopping_list(crop_name):
-    """Generates a sample fertilizer shopping list."""
-    # Logic placeholders conform to the user's example
-    return [
-        {"bags": 2, "loose_kg": 26.4, "name": get_bilingual("urea"), "qty_display": {"en": "2 Bags + 26.4 kg", "kn": "2 ಬ್ಯಾಗ್ + 26.4 ಕೆ.ಜಿ"}},
-        {"bags": 0, "loose_kg": 44.7, "name": get_bilingual("dap"), "qty_display": {"en": "44.7 kg (Loose)", "kn": "44.7 ಕೆ.ಜಿ (ಬಿಡಿ)"}},
-        {"bags": 1, "loose_kg": 47.2, "name": get_bilingual("mop"), "qty_display": {"en": "1 Bags + 47.2 kg", "kn": "1 ಬ್ಯಾಗ್ + 47.2 ಕೆ.ಜಿ"}},
-        {"bags": 1, "loose_kg": 0.0, "name": get_bilingual("zinc_sulfate"), "qty_display": {"en": "1 Bags + 0.0 kg", "kn": "1 ಬ್ಯಾಗ್ + 0.0 ಕೆ.ಜಿ"}}
-    ]
+    # 2. Agro Climatic Suitability
+    # Defaults for Zone 10
+    temp_range = "20°C - 35°C"
+    rain_range = "1000mm - 4000mm" if base_name == "Paddy" else "500mm - 1500mm"
+    soil_types = "Coastal Alluvium, Lateritic" if base_name == "Paddy" else "Red Soil, Loamy"
+    ph_range = "4.0 - 7.0"
 
-def generate_farming_guide(crop_data):
-    """Generates the bilingual FarmingGuide object."""
-    # 1. Duration
-    days = crop_data.get('crop_duration_days', 0)
-    months = round(days / 30, 1)
-    
-    label_days_en = get_text("days", "en")
-    label_days_kn = get_text("days", "kn")
-    label_approx_en = get_text("approx", "en")
-    label_approx_kn = get_text("approx", "kn")
-    label_months_en = get_text("months", "en")
-    label_months_kn = get_text("months", "kn")
-    
-    dur_en = f"{int(days)} {label_days_en} ({label_approx_en} {months} {label_months_en})"
-    dur_kn = f"{int(days)} {label_days_kn} ({label_approx_kn} {months} {label_months_kn})"
-    
-    # 2. Water
-    w_req = crop_data.get('water_requirement', 'Medium')
-    if w_req == 'High':
-        wat_en = get_text("needs_water_high", "en")
-        wat_kn = get_text("needs_water_high", "kn")
-    elif w_req == 'Low':
-        wat_en = get_text("needs_water_low", "en")
-        wat_kn = get_text("needs_water_low", "kn")
-    else:
-        wat_en = get_text("needs_water_medium", "en")
-        wat_kn = get_text("needs_water_medium", "kn")
+    agro = {
+        "suitable_temperature_range": get_bilingual(temp_range),
+        "suitable_rainfall_range": get_bilingual(rain_range),
+        "suitable_soil_types": get_bilingual(soil_types),
+        "suitable_soil_ph_range": get_bilingual(ph_range)
+    }
 
-    # 3. Yield
-    yld = crop_data.get('average_yield_per_acre', 0)
+    # 3. Morphological
+    height = "90cm - 120cm" if base_name == "Paddy" else "45cm - 60cm"
+    habit = crop_data.get('plant_type', 'Erect')
+    root = crop_data.get('root_depth', 'Shallow')
+    
+    # Use localized terms for dynamic values
+    days_val = crop_data.get('crop_duration_days', 120)
+    duration_en = f"{days_val} Days"
+    duration_kn = f"{days_val} ದಿನಗಳು"
+    duration = {"en": duration_en, "kn": duration_kn}
+
+    morph = {
+        "plant_height_range": get_bilingual(height),
+        "growth_habit": get_bilingual(habit),
+        "root_system_type": get_bilingual(root),
+        "maturity_duration_range": duration
+    }
+
+    # 4. Seed Specs
+    seed_rate = "25-30 kg" if base_name == "Paddy" else "5-10 kg"
+    germ = "4 - 7 Days"
+    viability = "6 - 9 Months"
+
+    seed = {
+        "seed_rate_per_acre": get_bilingual(seed_rate),
+        "germination_period": get_bilingual(germ),
+        "seed_viability_period": get_bilingual(viability)
+    }
+
+    # 5. Yield
+    yield_val = crop_data.get('average_yield_per_acre', 0)
     unit = crop_data.get('yield_unit', 'quintal')
+    unit_label_en = "quintal" if "quintal" in unit.lower() else unit
+    unit_label_kn = "ಕ್ವಿಂಟಾಲ್" if "quintal" in unit.lower() else unit
     
-    # Map units if possible
-    unit_key = "quintal_acre" if "quintal" in unit.lower() else "tons_acre"
-    unit_en = get_text(unit_key, "en")
-    unit_kn = get_text(unit_key, "kn")
-    
-    yld_label_en = get_text("expected_yield", "en")
-    yld_label_kn = get_text("expected_yield", "kn")
-    
-    yld_en = f"{yld_label_en}: {yld} {unit_en}"
-    yld_kn = f"{yld_label_kn}: {yld} {unit_kn}"
+    avg_yield_en = f"{yield_val} {unit_label_en}"
+    avg_yield_kn = f"{yield_val} {unit_label_kn}"
+    avg_yield = {"en": avg_yield_en, "kn": avg_yield_kn}
 
-    # 4. Spacing
-    row = crop_data.get('spacing_row_cm', 0)
-    plant = crop_data.get('spacing_plant_cm', 0)
-    label_cm_en = get_text("spacing_cm", "en")
-    label_cm_kn = get_text("spacing_cm", "kn")
-    
-    if row > 0:
-        spac_en = f"{row}x{plant} {label_cm_en}"
-        spac_kn = f"{row}x{plant} {label_cm_kn}"
-    else:
-        spac_en = get_text("standard_spacing", "en")
-        spac_kn = get_text("standard_spacing", "kn")
+    y_range_min = yield_val * 0.8
+    y_range_max = yield_val * 1.2
+    y_range_en = f"{y_range_min:.1f} - {y_range_max:.1f} {unit_label_en}"
+    y_range_kn = f"{y_range_min:.1f} - {y_range_max:.1f} {unit_label_kn}"
+    y_range = {"en": y_range_en, "kn": y_range_kn}
 
-    # 5. Maintenance
-    diff = crop_data.get('management_difficulty', 'Medium')
-    inp = crop_data.get('input_requirement', 'Medium')
-    
-    diff_en = get_text(diff, "en")
-    diff_kn = get_text(diff, "kn")
-    inp_en = get_text(inp, "en")
-    inp_kn = get_text(inp, "kn")
-    
-    label_diff_en = get_text("difficulty", "en")
-    label_diff_kn = get_text("difficulty", "kn")
-    label_inp_en = get_text("inputs", "en")
-    label_inp_kn = get_text("inputs", "kn")
-    
-    maint_en = f"{diff_en} {label_diff_en}, {inp_en} {label_inp_en}."
-    maint_kn = f"{diff_kn} {label_diff_kn}, {inp_kn} {label_inp_kn}."
-
-    return {
-        "duration": {"en": dur_en, "kn": dur_kn},
-        "water": {"en": wat_en, "kn": wat_kn},
-        "yield_est": {"en": yld_en, "kn": yld_kn},
-        "suitability": get_bilingual("good_season"),
-        "spacing": {"en": spac_en, "kn": spac_kn},
-        "maintenance": {"en": maint_en, "kn": maint_kn}
+    yield_pot = {
+        "average_yield_per_acre": avg_yield,
+        "yield_range_under_normal_conditions": y_range
     }
+
+    # 6. Sensitivity
+    sensitivity = {
+        "drought_sensitivity_level": get_bilingual(crop_data.get('management_difficulty', 'Medium')),
+        "waterlogging_sensitivity_level": get_bilingual("High" if base_name != "Paddy" else "Low"),
+        "heat_tolerance_level": get_bilingual("Medium")
+    }
+
+    # 7. End Use
+    end_use = {
+        "main_use_type": get_bilingual("Food Grain" if base_name == "Paddy" else "Commercial"),
+        "market_category": get_bilingual("Grade A")
+    }
+
+    knowledge = {
+        "crop_id": str(crop_data.get('crop_id', 'Unknown')),
+        "identity": identity,
+        "agro_climatic_suitability": agro,
+        "morphological_characteristics": morph,
+        "seed_specifications": seed,
+        "yield_potential": yield_pot,
+        "sensitivity_profile": sensitivity,
+        "end_use_information": end_use
+    }
+
+    return localize(knowledge, language)
+
 
 def recommend_crops(lat, long, date_str, language=None):
     """
-    Main Engine Function (Bilingual Advisory Version).
+    Main Engine Function (Static Knowledge Version).
     """
-
-    # ... (Keep existing setup) ...
-    # [Pre-amble same as before]
 
     if _df_map is None or _df_db is None:
         raise RuntimeError("Data not loaded. Call load_data() first.")
@@ -334,14 +304,6 @@ def recommend_crops(lat, long, date_str, language=None):
 
     taluk = zone_info['Division']
     zone_name = zone_info['Zone_Name']
-    zone_type = "coastal" if "Coastal" in zone_name else "hinterland"
-    
-    taluk = zone_info['Division']
-    zone_name = zone_info['Zone_Name']
-    zone_type = "coastal" if "Coastal" in zone_name else "hinterland"
-    
-    # Use cached data
-    taluk_data = _taluk_data.get(taluk, {}) if _taluk_data else {}
     
     all_recs = []
     
@@ -364,79 +326,30 @@ def recommend_crops(lat, long, date_str, language=None):
         if not matched_db.empty:
             db_row = matched_db.iloc[0].to_dict()
         else:
-            # Fallback for keys needed by formatting
             db_row = {
-                'crop_duration_days': 120, 
-                'water_requirement': 'Medium', 
+                'crop_name': full_name,
+                'crop_id': 'Unknown',
+                'crop_category': 'Unknown',
+                'crop_duration_days': 120,
                 'average_yield_per_acre': 0,
-                'yield_unit': 'quintal',
-                'spacing_row_cm': 0,
-                'spacing_plant_cm': 0,
-                'management_difficulty': 'Medium',
-                'input_requirement': 'Medium'
+                'yield_unit': 'quintal'
             }
         
-        crop_display_name = full_name
-        soil_type_input = taluk_data.get('soil_texture_class', 'Red Soil') 
-        
-        # Generator Calls
-        farming_guide_obj = generate_farming_guide(db_row)
-        
-        # Advisory Text (Simple Bilingual)
-        advisory_obj = {
-            "en": "Optimal.",
-            "kn": "ಪರಿಪೂರ್ಣ."
-        }
-        
-        # Water Requirement (Bilingual)
-        w_req_val = db_row.get('water_requirement', 'Medium')
-        w_req_obj = {
-            "en": w_req_val,
-            "kn": get_text(w_req_val, "kn") if get_text(w_req_val, "kn") != w_req_val else w_req_val # Fallback logic or map explicitly
-        }
-        # explicit map for High/Medium/Low if not in dict
-        if w_req_val == 'High': w_req_obj['kn'] = "ಹೆಚ್ಚು"
-        elif w_req_val == 'Medium': w_req_obj['kn'] = "ಮಧ್ಯಮ"
-        elif w_req_val == 'Low': w_req_obj['kn'] = "ಕಡಿಮೆ"
+        static_intel = get_static_knowledge(db_row, language)
+        all_recs.append(static_intel)
 
-        rec_data = {
-            "crop_name": crop_display_name,
-            "season": row['Season'],
-            "advisory": advisory_obj,
-            "farming_guide": farming_guide_obj,
-            "water_requirement": w_req_obj,
-            
-            # Technical Fields
-            "crop_id": db_row.get('crop_id', 'Unknown'),
-            "crop_category": db_row.get('crop_category', 'Unknown'),
-            "crop_duration_days": int(db_row.get('crop_duration_days', 0)),
-            "harvest_type": db_row.get('harvest_type', 'Single'),
-            "growth_type": db_row.get('growth_type', 'Annual'),
-            "root_depth": db_row.get('root_depth', 'Shallow'),
-            "plant_type": db_row.get('plant_type', 'Erect'),
-            "spacing_row_cm": float(db_row.get('spacing_row_cm', 0)),
-            "spacing_plant_cm": float(db_row.get('spacing_plant_cm', 0)),
-            "suitable_for_intercrop": db_row.get('suitable_for_intercrop', 'No'),
-            "management_difficulty": db_row.get('management_difficulty', 'Medium'),
-            "input_requirement": db_row.get('input_requirement', 'Medium'),
-            "average_yield_per_acre": float(db_row.get('average_yield_per_acre', 0)),
-            "yield_unit": db_row.get('yield_unit', 'quintal'),
-            "zone_source": "Agronomic Map"
-        }
-        
-        all_recs.append(rec_data)
-
-    # Dedupe by crop name
+    # Dedupe by crop id / name
     unique_recs = []
     seen_crops = set()
     for r in all_recs:
-        cname = r['crop_name']
-        if cname not in seen_crops:
+        cname = r['identity']['crop_name']
+        vname = r['identity']['variety_name']
+        key = f"{cname}_{vname}"
+        if key not in seen_crops:
              unique_recs.append(r)
-             seen_crops.add(cname)
+             seen_crops.add(key)
 
-    # Apply final localization if language selected
-    return localize({
+    return {
         "context": {
             "location": f"{taluk} - {zone_name}",
             "coordinates": {"lat": lat, "long": long},
@@ -444,7 +357,6 @@ def recommend_crops(lat, long, date_str, language=None):
             "date": date_str,
             "language": language
         },
-
         "recommendations": unique_recs
-    }, language)
+    }
 

@@ -7,108 +7,87 @@ TRANSLATIONS = {
     "score": {"en": "Score", "kn": "ಅಂಕ"},
     "warnings": {"en": "Warnings", "kn": "ಎಚ್ಚರಿಕೆಗಳು"},
     
-    # Soil Profile / Nutrients
-    "nitrogen": {"en": "Nitrogen", "kn": "ಸಾರಜನಕ"},
-    "phosphorus": {"en": "Phosphorus", "kn": "ರಂಜಕ"},
-    "potassium": {"en": "Potassium", "kn": "ಪೊಟ್ಯಾಶಿಯಂ"},
-    "zinc": {"en": "Zinc", "kn": "ಜಿಂಕ್"},
-    "boron": {"en": "Boron", "kn": "ಬೋರಾನ್"},
-    "iron": {"en": "Iron", "kn": "ಕಬ್ಬಿಣ"},
-    "sulphur": {"en": "Sulphur", "kn": "ಗಂಧಕ"},
-    "organic_carbon": {"en": "Organic Carbon", "kn": "ಸಾವಯವ ಇಂಗಾಲ"},
-    "ph": {"en": "pH", "kn": "ರಸಸಾರ"},
-    
-    # Nutrient Status
+    # Static Knowledge Categories
+    "crop_identity": {"en": "Crop Identity", "kn": "ಬೆಳೆ ಗುರುತು"},
+    "agro_climatic_suitability": {"en": "Agro Climatic Suitability", "kn": "ಕೃಷಿ-ಹವಾಮಾನ ಸೂಕ್ತತೆ"},
+    "morphological_characteristics": {"en": "Morphological Characteristics", "kn": "ಬೆಳೆಯ ರೂಪವಿಜ್ಞಾನ ಗುಣಲಕ್ಷಣಗಳು"},
+    "seed_specifications": {"en": "Seed Specifications", "kn": "ಬೀಜದ ವಿವರಣೆಗಳು"},
+    "yield_potential": {"en": "Yield Potential", "kn": "ಇಳುವರಿ ಸಾಮರ್ಥ್ಯ"},
+    "sensitivity_profile": {"en": "Sensitivity Profile", "kn": "ಸೂಕ್ಷ್ಮತೆಯ ಪ್ರೊಫೈಲ್"},
+    "end_use_information": {"en": "End Use Information", "kn": "ಅಂತಿಮ ಬಳಕೆಯ ಮಾಹಿತಿ"},
+
+    # Static Knowledge Fields
+    "variety_name": {"en": "Variety Name", "kn": "ತಳಿಯ ಹೆಸರು"},
+    "crop_category": {"en": "Crop Category", "kn": "ಬೆಳೆ ವರ್ಗ"},
+    "suitable_temperature_range": {"en": "Suitable Temperature Range", "kn": "ಸೂಕ್ತ ತಾಪಮಾನ ಶ್ರೇಣಿ"},
+    "suitable_rainfall_range": {"en": "Suitable Rainfall Range", "kn": "ಸೂಕ್ತ ಮಳೆ ಪ್ರಮಾಣ ಶ್ರೇಣಿ"},
+    "suitable_soil_types": {"en": "Suitable Soil Types", "kn": "ಸೂಕ್ತ ಮಣ್ಣಿನ ವಿಧಗಳು"},
+    "suitable_soil_ph_range": {"en": "Suitable Soil pH Range", "kn": "ಸೂಕ್ತ ಮಣ್ಣಿನ ರಸಸಾರ ಶ್ರೇಣಿ"},
+    "plant_height_range": {"en": "Plant Height Range", "kn": "ಸಸ್ಯದ ಎತ್ತರದ ಶ್ರೇಣಿ"},
+    "growth_habit": {"en": "Growth Habit", "kn": "ಬೆಳವಣಿಗೆಯ ರೀತಿ"},
+    "root_system_type": {"en": "Root System Type", "kn": "ಬೇರಿನ ವ್ಯವಸ್ಥೆಯ ವಿಧ"},
+    "maturity_duration_range": {"en": "Maturity Duration Range", "kn": "ಪಕ್ವತೆಯ ಅವಧಿ ಶ್ರೇಣಿ"},
+    "seed_rate_per_acre": {"en": "Seed Rate per Acre", "kn": "ಎಕರೆಗೆ ಬೀಜದ ಪ್ರಮಾಣ"},
+    "germination_period": {"en": "Germination Period", "kn": "ಮೊಳಕೆಯ ಅವಧಿ"},
+    "seed_viability_period": {"en": "Seed Viability Period", "kn": "ಬೀಜದ ಕಾರ್ಯಸಾಧ್ಯತೆಯ ಅವಧಿ"},
+    "average_yield_per_acre": {"en": "Average Yield per Acre", "kn": "ಎಕರೆಗೆ ಸರಾಸರಿ ಇಳುವರಿ"},
+    "yield_range_under_normal_conditions": {"en": "Yield Range (Normal Conditions)", "kn": "ಸಾಮಾನ್ಯ ಸ್ಥಿತಿಯಲ್ಲಿ ಇಳುವರಿ ಶ್ರೇಣಿ"},
+    "drought_sensitivity_level": {"en": "Drought Sensitivity Level", "kn": "ಬರ ಸೂಕ್ಷ್ಮತೆಯ ಮಟ್ಟ"},
+    "waterlogging_sensitivity_level": {"en": "Waterlogging Sensitivity Level", "kn": "ಜೌಗು ಸೂಕ್ಷ್ಮತೆಯ ಮಟ್ಟ"},
+    "heat_tolerance_level": {"en": "Heat Tolerance Level", "kn": "ಉಷ್ಣ ಸಹಿಷ್ಣುತೆ ಮಟ್ಟ"},
+    "main_use_type": {"en": "Main Use Type", "kn": "ಮುಖ್ಯ ಬಳಕೆಯ ವಿಧ"},
+    "market_category": {"en": "Market Category", "kn": "ಮಾರುಕಟ್ಟೆ ವರ್ಗ"},
+
+    # Values / Ranges
+    "20°c - 35°c": {"en": "20°C - 35°C", "kn": "20°C - 35°C"},
+    "1000mm - 4000mm": {"en": "1000mm - 4000mm", "kn": "1000ಮಿ.ಮೀ - 4000ಮಿ.ಮೀ"},
+    "500mm - 1500mm": {"en": "500mm - 1500mm", "kn": "500ಮಿ.ಮೀ - 1500ಮಿ.ಮೀ"},
+    "coastal alluvium, lateritic": {"en": "Coastal Alluvium, Lateritic", "kn": "ಕರಾವಳಿ ಮೆಕ್ಕಲು ಮತ್ತು ಲ್ಯಾಟರೈಟ್"},
+    "red soil, loamy": {"en": "Red Soil, Loamy", "kn": "ಕೆಂಪು ಮತ್ತು ಗೋಡು ಮಣ್ಣು"},
+    "4.0 - 7.0": {"en": "4.0 - 7.0", "kn": "4.0 - 7.0"},
+    "90cm - 120cm": {"en": "90cm - 120cm", "kn": "90ಸೆಂ.ಮೀ - 120ಸೆಂ.ಮೀ"},
+    "45cm - 60cm": {"en": "45cm - 60cm", "kn": "45ಸೆಂ.ಮೀ - 60ಸೆಂ.ಮೀ"},
+    "25-30 kg": {"en": "25-30 kg", "kn": "25-30 ಕೆ.ಜಿ"},
+    "5-10 kg": {"en": "5-10 kg", "kn": "5-10 ಕೆ.ಜಿ"},
+    "4 - 7 days": {"en": "4 - 7 Days", "kn": "4 - 7 ದಿನಗಳು"},
+    "6 - 9 months": {"en": "6 - 9 Months", "kn": "6 - 9 ತಿಂಗಳುಗಳು"},
+    "grade a": {"en": "Grade A", "kn": "ದರ್ಜೆ ಎ"},
+    "food grain": {"en": "Food Grain", "kn": "ಆಹಾರ ಧಾನ್ಯ"},
+    "commercial": {"en": "Commercial", "kn": "ವಾಣಿಜ್ಯ"},
+    "erect": {"en": "Erect", "kn": "ನೆಟ್ಟಗೆ ಬೆಳೆಯುವ"},
+    "shallow": {"en": "Shallow", "kn": "ಮೇಲ್ಪದರದ ಬೇರು"},
+    "cereal": {"en": "Cereal", "kn": "ಧಾನ್ಯ"},
+    "vegetables": {"en": "Vegetables", "kn": "ತರಕಾರಿಗಳು"},
+    "paddy": {"en": "Paddy", "kn": "ಭತ್ತ"},
+    "groundnut": {"en": "Groundnut", "kn": "ನೆಲಗಡಲೆ"},
+    "maize": {"en": "Maize", "kn": "ಮೆಕ್ಕೆಜೋಳ"},
+    "chilli": {"en": "Chilli", "kn": "ಮೆಣಸಿನಕಾಯಿ"},
+    "brinjal": {"en": "Brinjal", "kn": "ಬದನೆಕಾಯಿ"},
+    "cucumber": {"en": "Cucumber", "kn": "ಸೌತೆಕಾಯಿ"},
+    "radish": {"en": "Radish", "kn": "ಮೂಲಂಗಿ"},
+    "lady's finger": {"en": "Lady's Finger", "kn": "ಬೆಂಡೆಕಾಯಿ"},
+    "generic": {"en": "Generic", "kn": "ಸಾಮಾನ್ಯ"},
+    "mo-4": {"en": "MO-4 (Bhadra)", "kn": "ಎಂ.ಓ-4 (ಭದ್ರಾ)"},
+    "betta-makki": {"en": "Betta-Makki", "kn": "ಬೆಟ್ಟ-ಮಕ್ಕಿ"},
+    "shakti": {"en": "Shakti", "kn": "ಶಕ್ತಿ"},
+    "cth-1": {"en": "CTH-1 (Mukti)", "kn": "ಸಿ.ಟಿ.ಎಚ್-1 (ಮುಕ್ತಿ)"},
+    "sahyadri brahma": {"en": "Sahyadri Brahma", "kn": "ಸಹ್ಯಾದ್ರಿ ಬ್ರಹ್ಮ"},
+    "tmv-2": {"en": "TMV-2", "kn": "ಟಿ.ಎಂ.ವಿ-2"},
+    "dh 3-30": {"en": "DH 3-30", "kn": "ಡಿ.ಎಚ್ 3-30"},
+    "jyoti": {"en": "Jyoti", "kn": "ಜ್ಯೋತಿ"},
+
+    # Existing Nutrient Status (kept for general utility)
     "low": {"en": "Low", "kn": "ಕಡಿಮೆ"},
     "medium": {"en": "Medium", "kn": "ಮಧ್ಯಮ"},
     "high": {"en": "High", "kn": "ಹೆಚ್ಚು"},
-    "sufficient": {"en": "Sufficient", "kn": "ಸಾಕಷ್ಟು ಇದೆ"},
-    "deficient": {"en": "Deficient", "kn": "ಕೊರತೆ ಇದೆ"},
-    "neutral": {"en": "Neutral", "kn": "ತಟಸ್ಥ"},
-    "acidic": {"en": "Acidic", "kn": "ಆಮ್ಲೀಯ"},
-    "alkaline": {"en": "Alkaline", "kn": "ಕ್ಷಾರೀಯ"},
-    "normal": {"en": "Normal", "kn": "ಸಾಮಾನ್ಯ"},
-
-    # Soil Types
-    "sandy": {"en": "Sandy", "kn": "ಮರಳು ಮಿಶ್ರಿತ"},
-    "clay": {"en": "Clay", "kn": "ಜೇಡಿ ಮಣ್ಣು"},
-    "red": {"en": "Red Soil", "kn": "ಕೆಂಪು ಮಣ್ಣು"},
-    "lateritic": {"en": "Lateritic", "kn": "ಲ್ಯಾಟರೈಟ್ ಮಣ್ಣು"},
-    "loamy": {"en": "Loamy", "kn": "ಗೋಡು ಮಣ್ಣು"},
-
-    # Fertilizers
-    "urea": {"en": "Urea", "kn": "ಯೂರಿಯಾ"},
-    "dap": {"en": "DAP", "kn": "ಡಿ.ಎ.ಪಿ"},
-    "mop": {"en": "MOP (Potash)", "kn": "ಪೊಟ್ಯಾಷ್ (MOP)"},
-    "zinc_sulfate": {"en": "Zinc Sulfate", "kn": "ಜಿಂಕ್ ಸಲ್ಫೇಟ್"},
-    "complex": {"en": "Complex Fertilizer", "kn": "ಮಿಶ್ರ ಗೊಬ್ಬರ"},
-    "ssp": {"en": "SSP", "kn": "ಎಸ್.ಎಸ್.ಪಿ"},
-    
-    # Alerts / Tips
-    "gps_mode": {
-        "en": "GPS Mode used for Udupi",
-        "kn": "⚠️ GPS ವಿಧಾನ (Udupi ಭಾಗದ ಸರಾಸರಿ ಮಾಹಿತಿ) ಬಳಸಲಾಗಿದೆ."
-    },
-    "weather_good": {
-        "en": "✅ Weather suitable for application.",
-        "kn": "✅ ಗೊಬ್ಬರ ಹಾಕಲು ಹವಾಮಾನ ಸೂಕ್ತವಾಗಿದೆ."
-    },
-    "zinc_warning": {
-        "en": "⚠️ DO NOT MIX Zinc and DAP. Apply Zinc separately.",
-        "kn": "⚠️ ಜಿಂಕ್ ಮತ್ತು ಡಿ.ಎ.ಪಿ ಮಿಶ್ರಣ ಮಾಡಬೇಡಿ. ಜಿಂಕ್ ಅನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಹಾಕಿ."
-    },
-    "plough_deep": {
-        "en": "🚜 Pre-Sowing: Plough 15cm deep to break hard pans.",
-        "kn": "🚜 ಬಿತ್ತನೆಗೆ ಮುನ್ನ: ಗಟ್ಟಿಯಾದ ಮಣ್ಣನ್ನು ಒಡೆಯಲು 15 ಸೆಂ.ಮೀ ಆಳವಾಗಿ ಉಳಿಮೆ ಮಾಡಿ."
-    },
-    "green_manure": {
-        "en": "🌿 Organic: Apply Green Manure (Daincha) 2 weeks before planting.",
-        "kn": "🌿 ಸಾವಯವ: ಬಿತ್ತನೆಗೆ 2 ವಾರಗಳ ಮೊದಲು ಹಸಿರೆಲೆ ಗೊಬ್ಬರ ಹಾಕಿ."
-    },
-    "stubble": {
-        "en": "💧 Post-Harvest: Retain stubble to improve soil carbon.",
-        "kn": "💧 ಕಟಾವಿನ ನಂತರ: ಮಣ್ಣಿನ ಇಂಗಾಲ ಹೆಚ್ಚಿಸಲು ಕೂಳೆಗಳನ್ನು ಉಳಿಸಿ."
-    },
-    
-    # Soil Issues
-    "sandy_loss": {
-        "en": "⚠️ Sandy soil loses water fast.",
-        "kn": "⚠️ ಮರಳು ಮಿಶ್ರಿತ ಮಣ್ಣಿನಲ್ಲಿ ನೀರು ನಿಲ್ಲುವುದಿಲ್ಲ."
-    },
-    "drainage_excess": {
-        "en": "Excessive drainage. Nutrients leach easily.",
-        "kn": "ಅತಿಯಾದ ಬಸಿಯುವಿಕೆ. ಪೋಷಕಾಂಶ ನಷ್ಟವಾಗಬಹುದು."
-    },
-    "erosion_risk": {
-        "en": "⚠️ High erosion risk. Use contour bunds.",
-        "kn": "⚠️ ಮಣ್ಣು ಸವೆತದ ಅಪಾಯ. ಬದುಗಳನ್ನು ನಿರ್ಮಿಸಿ."
-    },
-    "low_moisture": {
-        "en": "⚠️ Low water holding. Irrigate frequently.",
-        "kn": "⚠️ ಕಡಿಮೆ ತೇವಾಂಶ. ಆಗಾಗ್ಗೆ ನೀರು ಹಾಯಿಸಿ."
-    },
-
-    # Farming Guide Terms
-    "days": {"en": "Days", "kn": "ದಿನಗಳು"},
-    "months": {"en": "months", "kn": "ತಿಂಗಳು"},
-    "approx": {"en": "approx", "kn": "ಸುಮಾರು"},
-    "needs_water_high": {"en": "Needs abundant water (flood irrigation typically).", "kn": "ಹೆಚ್ಚು ನೀರು ಬೇಕಾಗುತ್ತದೆ (ಸಾಮಾನ್ಯವಾಗಿ ಗದ್ದೆ ಪಾತಿ)."},
-    "needs_water_medium": {"en": "Requires regular watering.", "kn": "ನಿಯಮಿತವಾಗಿ ನೀರು ಬೇಕಾಗುತ್ತದೆ."},
-    "needs_water_low": {"en": "Drought tolerant. Minimal watering.", "kn": "ಬರ ನಿರೋಧಕ. ಕಡಿಮೆ ನೀರು ಸಾಕು."},
-    "expected_yield": {"en": "Expected yield", "kn": "ನಿರೀಕ್ಷಿತ ಇಳುವರಿ"},
-    "quintal_acre": {"en": "quintal/acre", "kn": "ಕ್ವಿಂಟಾಲ್/ಎಕರೆ"},
-    "tons_acre": {"en": "tons/acre", "kn": "ಟನ್/ಎಕರೆ"},
-    "good_season": {"en": "Good for this season.", "kn": "ಈ ಹಂಗಾಮಿಗೆ ಸೂಕ್ತವಾಗಿದೆ."},
-    "spacing_cm": {"en": "cm", "kn": "ಸೆಂ.ಮೀ"},
-    "standard_spacing": {"en": "Standard spacing", "kn": "ಸಾಮಾನ್ಯ ಅಂತರ"},
-    "difficulty": {"en": "difficulty", "kn": "ನಿರ್ವಹಣೆ ಕಷ್ಟ"},
-    "inputs": {"en": "inputs", "kn": "ಪರಿಕರಗಳು"}
 }
 
 def get_bilingual(key):
     """Returns the bilingual dict for a given key, defaults to Title Case key if missing."""
+    if not key: return {"en": "N/A", "kn": "ಲಭ್ಯವಿಲ್ಲ"}
     return TRANSLATIONS.get(key.lower(), {"en": key, "kn": key})
 
 def get_text(key, lang='en'):
     """Returns specific language text."""
+    if not key: return "N/A" if lang == 'en' else "ಲಭ್ಯವಿಲ್ಲ"
     return TRANSLATIONS.get(key.lower(), {}).get(lang, key)

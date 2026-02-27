@@ -37,10 +37,14 @@ try:
     res = get_recommendation(req)
     if res['context']['seasons_detected'] == ['Kharif'] and len(res['recommendations']) > 0:
         print("✅ Recommendation Logic Successful")
-        # Access via new flat structure
-        print(f"Sample: {res['recommendations'][0]['crop_name']}")
+        # Access via new nested structure
+        rec = res['recommendations'][0]
+        print(f"Sample: {rec['identity']['crop_name']}")
+        print(f"Agro: {rec['agro_climatic_suitability']['suitable_soil_types']}")
     else:
         print("❌ Unexpected Result Logic")
         print(res)
 except Exception as e:
     print(f"❌ Execution Failed: {e}")
+    import traceback
+    traceback.print_exc()

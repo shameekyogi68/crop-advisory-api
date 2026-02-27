@@ -51,11 +51,13 @@ for sc in scenarios:
         if len(recs) > 0:
             # Print top crops to verify filtering
             for r in recs:
-                # Highlight if it's an advisory result
-                crop_name = r.get('crop_name', 'Unknown')
-                adv_text = r.get('advisory', {}).get('en', 'No Advisory')
+                # Highlight if it's a knowledge result
+                identity = r.get('identity', {})
+                crop_name = identity.get('crop_name', 'Unknown')
+                variety = identity.get('variety_name', 'Unknown')
+                rain = r.get('agro_climatic_suitability', {}).get('suitable_rainfall_range', 'Unknown')
                 
-                print(f"   - {crop_name} | Advisory: {adv_text}")
+                print(f"   - {crop_name} ({variety}) | Rainfall: {rain}")
         else:
             print("⚠️ No crops found!")
             
